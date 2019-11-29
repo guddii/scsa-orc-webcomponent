@@ -13,7 +13,8 @@
     "npm": "6.13.1"
   },
   "os": [
-    "darwin"
+    "darwin",
+    "linux"
   ],
   "version": "1.0.0",
   "scripts": {
