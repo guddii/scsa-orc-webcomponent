@@ -1,10 +1,12 @@
-import { MessagingEndpoints } from "@scsa/messaging/src/types/MessagingEndpoints";
-import { EndpointProperties } from "@scsa/messaging/src/endpoints/Endpoint";
-import { Message } from "@scsa/messaging/src/constructors/Message";
-import { MessagingChannel } from "@scsa/messaging/src/types/MessagingChannel";
-import { MessagingSystem } from "@scsa/messaging/src/MessagingSystem";
+import {
+    MessagingEndpoints,
+    EndpointProperties,
+    Message,
+    MessagingChannel,
+    MessagingSystem,
+    LoggerSingleton
+} from "@scsa/messaging";
 import { Applications } from "./Constants";
-import { LoggerSingleton } from "@scsa/messaging/src/LoggerSingleton";
 
 export class App implements MessagingEndpoints {
     properties: EndpointProperties = Applications.MAIN;

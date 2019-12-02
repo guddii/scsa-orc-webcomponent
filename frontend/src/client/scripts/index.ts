@@ -1,9 +1,6 @@
-import { MessagingSystemFactory } from "@scsa/messaging/src/MessagingSystem";
-import { EndpointProperties } from "@scsa/messaging/src/endpoints/Endpoint";
+import { EndpointProperties, MessagingSystemFactory, SecurityChecks } from "@scsa/messaging";
 import { Applications } from "./Constants";
-
 import { App } from "./App";
-import { SecurityChecks } from "@scsa/messaging/src/SecurityChecks";
 
 const recipients = new Map<string, Array<EndpointProperties>>();
 recipients.set(Applications.CATALOGUE.name, [Applications.CHECKOUT]);
