@@ -1,17 +1,21 @@
-import { EndpointProperties } from "@scsa/messaging/src/endpoints/Endpoint";
+import { EndpointProperties } from "@scsa/messaging";
+import { cfg } from "../../config";
 
 export const Applications = {
-    MAIN: new EndpointProperties("MainApp", "http://localhost:3000/"),
+    MAIN: new EndpointProperties(
+        cfg.CURRENT.options.text,
+        cfg.CURRENT.options.href.href
+    ),
     ACCOUNT: new EndpointProperties(
-        "AccountApp",
-        "https://scsa-app-account.herokuapp.com/"
+        cfg.APPLICATIONS.Account.options.text,
+        cfg.APPLICATIONS.Account.options.href.href
     ),
     CATALOGUE: new EndpointProperties(
-        "CatalogueApp",
-        "https://scsa-app-catalogue.herokuapp.com/"
+        cfg.APPLICATIONS.Catalogue.options.text,
+        cfg.APPLICATIONS.Catalogue.options.href.href
     ),
     CHECKOUT: new EndpointProperties(
-        "CheckoutApp",
-        "https://scsa-app-checkout.herokuapp.com/"
+        cfg.APPLICATIONS.Checkout.options.text,
+        cfg.APPLICATIONS.Checkout.options.href.href
     )
 };

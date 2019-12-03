@@ -1,4 +1,9 @@
-import { EndpointProperties, MessagingSystemFactory, SecurityChecks } from "@scsa/messaging";
+import {
+    EndpointProperties,
+    MessagingSystemFactory,
+    SecurityChecks
+} from "@scsa/messaging";
+
 import { Applications } from "./Constants";
 import { App } from "./App";
 
