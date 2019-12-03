@@ -31,6 +31,7 @@
     "build:prod:client": "webpack --config ./node_modules/@scsa/base/src/webpack/client/prod.js --mode production"
   },
   "dependencies": {
+    "@scsa/global": "https://github.com:guddii/scsa-cfg-global.git",
     "@scsa/base": "https://github.com:guddii/scsa-cfg-base.git",
     "@scsa/messaging": "https://github.com:guddii/scsa-lib-messaging.git",
     "@scsa/styling": "https://github.com:guddii/scsa-lib-styling.git",
