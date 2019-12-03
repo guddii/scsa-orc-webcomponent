@@ -2,7 +2,7 @@ extends ../../../node_modules/@scsa/styling/src/server/views/main.pug
 
 block top
     iframe(
-        src=APPLICATIONS.Account.options.href
+        src=APPLICATIONS.Account.options.url
         title=APPLICATIONS.Account.options.text
         data-endpoint="AccountApp"
         sandbox="allow-scripts allow-same-origin"
@@ -11,7 +11,7 @@ block top
 
 block left
     iframe(
-        src=APPLICATIONS.Catalogue.options.href
+        src=APPLICATIONS.Catalogue.options.url
         title=APPLICATIONS.Catalogue.options.text
         data-endpoint="CatalogueApp"
         sandbox="allow-scripts allow-same-origin"
@@ -20,7 +20,7 @@ block left
 
 block right
     iframe(
-        src=APPLICATIONS.Checkout.options.href
+        src=APPLICATIONS.Checkout.options.url
         title=APPLICATIONS.Checkout.options.text
         data-endpoint="CheckoutApp"
         sandbox="allow-scripts allow-same-origin"
