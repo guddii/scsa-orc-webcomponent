@@ -6,17 +6,17 @@ import {
     MessagingSystem,
     LoggerSingleton
 } from "@scsa/messaging";
-import { Applications } from "./Constants";
+import { cfg } from "../../config";
 
 export class App implements MessagingEndpoints {
-    properties: EndpointProperties = Applications.MAIN;
+    properties: EndpointProperties = cfg.CURRENT;
     channel: MessagingChannel;
 
     constructor(messagingSystem: MessagingSystem) {
         this.channel = messagingSystem.channel;
-        this.channel.subscribe(this, Applications.SALES.name);
-        this.channel.subscribe(this, Applications.CATALOGUE.name);
-        this.channel.subscribe(this, Applications.CHECKOUT.name);
+        this.channel.subscribe(this, cfg.APPLICATIONS.Sales.options.text);
+        this.channel.subscribe(this, cfg.APPLICATIONS.Catalogue.options.text);
+        this.channel.subscribe(this, cfg.APPLICATIONS.Checkout.options.text);
     }
 
     handleEndpoint(data: any) {
@@ -32,15 +32,15 @@ export class App implements MessagingEndpoints {
         try {
             this.channel.publish(
                 new Message({ hello: "Account, are you there?" }),
-                Applications.SALES.name
+                cfg.APPLICATIONS.Sales.options.text
             );
             this.channel.publish(
                 new Message({ hello: "Catalogue, are you there?" }),
-                Applications.CATALOGUE.name
+                cfg.APPLICATIONS.Catalogue.options.text
             );
             this.channel.publish(
                 new Message({ hello: "Checkout, are you there?" }),
-                Applications.CHECKOUT.name
+                cfg.APPLICATIONS.Checkout.options.text
             );
         } catch (error) {
             console.warn(error);
