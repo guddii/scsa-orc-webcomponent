@@ -1,28 +1,28 @@
 extends ../../../node_modules/@scsa/styling/src/server/views/main.pug
 
 block top
-    iframe(
+    sales-search(
         src=APPLICATIONS.Sales.options.url
         title=APPLICATIONS.Sales.options.text
         data-endpoint=APPLICATIONS.Sales.options.text
-        sandbox="allow-scripts allow-same-origin"
-        class="IFrame IFrame--fullBleed"
+        class="Socket Socket--fullBleed"
     )
+    script(defer type='text/javascript' src=APPLICATIONS.Sales.options.url + 'api/fragments/webcomponent.js')
 
 block left
-    iframe(
+    catalogue-stock(
         src=APPLICATIONS.Catalogue.options.url
         title=APPLICATIONS.Catalogue.options.text
         data-endpoint=APPLICATIONS.Catalogue.options.text
-        sandbox="allow-scripts allow-same-origin"
-        class="IFrame IFrame--fullBleed"
+        class="Socket Socket--fullBleed"
     )
+    script(defer type='text/javascript' src=APPLICATIONS.Catalogue.options.url + 'api/fragments/webcomponent.js')
 
 block right
-    iframe(
+    checkout-basket(
         src=APPLICATIONS.Checkout.options.url
         title=APPLICATIONS.Checkout.options.text
         data-endpoint=APPLICATIONS.Checkout.options.text
-        sandbox="allow-scripts allow-same-origin"
-        class="IFrame IFrame--fullBleed"
+        class="Socket Socket--fullBleed"
     )
+    script(defer type='text/javascript' src=APPLICATIONS.Checkout.options.url + 'api/fragments/webcomponent.js')
