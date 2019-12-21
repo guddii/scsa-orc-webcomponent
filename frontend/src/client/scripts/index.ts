@@ -5,4 +5,4 @@ import { App } from "./App";
 
 const securityChecks = new SecurityChecks(cfg.endpoints());
 const messaging = new MessagingSystem({ security: securityChecks });
-new App(messaging);
+const app = new App(messaging);
