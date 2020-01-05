@@ -16,6 +16,7 @@ block left
         data-endpoint=APPLICATIONS.Catalogue.options.text
         class="Socket Socket--fullBleed"
     )
+        checkout-controls(slot="controls")
     script(defer type='text/javascript' src=APPLICATIONS.Catalogue.options.url + 'api/fragments/webcomponent.js')
 
 block right
@@ -25,4 +26,6 @@ block right
         data-endpoint=APPLICATIONS.Checkout.options.text
         class="Socket Socket--fullBleed"
     )
+        catalogue-list(slot="products")
+            checkout-controls(slot="controls" styling="width:100px")
     script(defer type='text/javascript' src=APPLICATIONS.Checkout.options.url + 'api/fragments/webcomponent.js')
